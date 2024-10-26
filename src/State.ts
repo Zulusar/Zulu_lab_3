@@ -13,10 +13,10 @@ export class State {
         this.sym = sym
     }
 
-    clone(): State {
+    clone(): State {              //для чего 3 поля копирования????
         // TODO
         // Функция должна вернуть копию объекта
-        return this
+        return new State(this.board, this.sym)
     }
 
 }

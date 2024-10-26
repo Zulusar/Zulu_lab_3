@@ -43,22 +43,22 @@ export class Board {
         // Если длина строки не равна 9, возвращает null
         // Если встретиться символ не из Cell возвращает null
         // Если преобразование прошло успешно возвращает true
-        let count = 0
-        for(let i = 0; i<str.length; i++){
-            if(str.length != 9 || str[i]!=="Cell") 
-                count++
-            else{
-                count = 0
-            }
-        }
-        if(count!=0){
-            return null
-        }
-        else{
-            for(let i =0; i<str.length; i++){
-                Board.cells[i] = str.split("")[i] as Cell          //обращение к нестатическому полю??
-            }
-        }
+        //let count = 0
+        //for(let i = 0; i<str.length; i++){
+        //    if(str.length != 9 || str[i]!=="Cell") 
+        //        count++
+        //    else{
+        //        count = 0
+        //    }
+        //}
+        //if(count!=0){
+        //    return null
+        //}
+        //else{
+       //     for(let i =0; i<str.length; i++){
+        //        cells[i] = str.split("")[i] as Cell          //обращение к нестатическому полю??
+        //    }
+        //}
 
         return null        
     }
@@ -106,12 +106,12 @@ export class Board {
         //  в линию - возвращает этот символ
         // Иначе возвращает символ "_"
         for(let i = 0; i < Board.winPos.length; i++){
-            if(this.cells[Board.winPos[i][0]] == this.cells[Board.winPos[i][1]] && this.cells[Board.winPos[i][1]] == this.cells[Board.winPos[i][2]]){
+            if(this.cells[Board.winPos[i][0]] == this.cells[Board.winPos[i][1]] && this.cells[Board.winPos[i][0]] == this.cells[Board.winPos[i][2]] && this.cells[Board.winPos[i][0]] != "_"){
                 //count++
                 data = this.cells[Board.winPos[i][0]]
                 break
             }
-            else  data      
+            else  data = "_"      
         }
         return data
        

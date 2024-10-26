@@ -20,13 +20,13 @@ export class Game {
     get state(): State {
         // TODO
         // Сеттер должен возвращать текущее состояние игры
-        return new State()
+        return this.steps[this.current]
     }
 
     clone() {
         // TODO
         // Функция должна вернуть копию объекта
-        return this        
+        return new Game(this.steps,this.current)        
     }
 
     move(index: number): boolean {
@@ -37,7 +37,7 @@ export class Game {
         //  обновляет current и возвращает true, иначе возвращает false
         // Нужно учесть, что если вызывалась функция toStep, то 
         //  current можно указывать не на последний элемент steps
-        return true  
+            return true
     }
 
     toStep(step: number) {
